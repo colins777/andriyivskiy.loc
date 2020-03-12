@@ -3240,10 +3240,9 @@ h1 {
 }
 
 .floors-popup {
-  display: none;
   position: fixed;
   top: 50%;
-  left: 0;
+  left: -600px;
   margin-top: -300px;
   background-color: #fff;
   width: 600px;
@@ -3258,7 +3257,7 @@ h1 {
   border-left: none;
 }
 
-.floors-popup div {
+.floors-popup__img {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -3271,9 +3270,31 @@ h1 {
   width: 100%;
 }
 
-.floors-popup div img {
+.floors-popup__img img {
   width: 100%;
   max-height: 550px;
+}
+
+.floors-popup__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.floors-popup__close img {
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.floors-popup__close img:hover {
+  width: 55px;
+  height: 55px;
 }
 
 .my-dots {
@@ -3936,6 +3957,22 @@ body input, body textarea {
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+  .floors-popup {
+    width: 300px;
+    height: 300px;
+  }
+  .floors-popup img {
+    width: 100%;
+    max-height: 280px;
+  }
+  .floors-popup__close {
+    width: 30px;
+    height: 30px;
+  }
+  .floors-popup__close img {
+    width: 30px;
+    height: 30px;
   }
   .planning .slide-descr {
     width: 100%;

@@ -95,7 +95,10 @@ while ($advantagesItems->have_posts()) :
 			<div class="arrow"></div>
 		</div>
 		<div class="floors-popup">
-			<div></div>
+			<div class="floors-popup__close">
+				<img src="<?php echo get_template_directory_uri() . '/img/icons/times-solid.svg'?>" alt="">
+			</div>
+			<div class="floors-popup__img"></div>
 		</div>
 		<div class="floors-content">
 			<svg viewBox = "0 0 800 1389.3333">
