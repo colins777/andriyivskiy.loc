@@ -1,0 +1,133 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+@media screen and (max-width: 1025px)
+	.container
+		padding: 0 50px
+	.header-menu
+		position: absolute
+		top: 0
+		left: -100%
+		display: none
+		width: 100%
+		z-index: 1
+		.main-nav
+			padding: 10px 0
+			width: 100%
+			flex-direction: column
+			justify-content: center
+			background-color: #000
+			padding-left: 0
+			& > *:not(:last-child)
+				margin-right: 0
+
+	.container-flex
+		flex-direction: column
+		justify-content: center
+		.header-top__line-right
+			.contacts
+				margin: auto
+	.header-text
+		top: 40%
+		left: 50%
+		transform: translateX(-50%)
+	.section-title
+		width: 100%
+	.news-item
+		width: 49%
+	.planning
+		.slide-content
+			padding: 20px
+			max-height: 100%
+		.slide-descr
+			width: 45%
+			min-height: 100%
+		.next-arrow
+			right: 30px
+		.prev-arrow
+			left: 30px
+		.prev-arrow, .next-arrow
+			width: 30px
+			height: 30px
+			&:hover
+				width: 32px
+				height: 32px
+	.sandwich
+		display: block
+		position: absolute
+		top: 20px
+		left: 20px
+		z-index: 2
+
+
+@media screen and (max-width: 480px)
+	section
+	.header
+		min-height: 600px
+		height: auto
+		&-nothome
+			.header-top__line-right
+				.contacts
+					display: flex
+					flex-direction: column
+					justify-content: center
+					.button-left
+						margin: 10px auto
+	.container
+		padding: 0 30px
+	.header-text
+		width: 100%
+		padding: 10px
+		top: 40%
+	.section-title
+		font-size: 16px
+		padding: 10px
+		.arrow
+			display: none
+	.advantages
+		&-wrap
+			flex-direction: column
+			justify-content: center
+			align-items: flex-start
+		&-item__top
+			font-size: 20px
+			line-height: 20px
+		&-item__bottom
+			font-size: 14px
+			line-height: 14px
+	.slide-content
+		flex-direction: column
+	.planning
+		.slide-descr
+			width: 100%
+		.slide-img
+			width: 100%
+		.next-arrow
+			right: 10px
+		.prev-arrow
+			left: 10px
+	.news-items
+		flex-direction: column
+	.news-item
+		width: 100%
+	.news-item__title
+		padding: 10px
+	.contacts-address
+		position: relative
+		max-width: 100%
+		margin-top: 80px
+		justify-content: center
+		align-items: center
+	.contacts-wrap
+		display: flex
+		flex-direction: column
+	.page-planning
+		&__content
+			flex-direction: column
+		&__text
+			max-width: 100%
+			padding-bottom: 30px
+		&__gallery
+			max-width: 100%
