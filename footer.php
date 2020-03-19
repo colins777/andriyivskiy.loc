@@ -8,14 +8,12 @@
 
 
 <div class="hidden">
-	<div id="callback" class="white-popup mfp-hide">
-        <?php echo do_shortcode ('[contact-form-7 id="82" title="Popup"]') ?>
-	</div>
-
-</div>
+		<div id="callback" class="white-popup mfp-hide">
+			<?php echo do_shortcode ('[contact-form-7 id="82" title="Popup"]') ?>
+		</div>
+</div> <!--hidden-->
 
 <?php wp_footer(); ?>
 </body>
-
 
 </html>

@@ -1,4 +1,6 @@
-$(document).ready(function () {
+jQuery(function($){
+
+$(document).ready(function ($) {
 	$('.s-slider').slick({
 		dots: true,
 		autoplay: true,
@@ -14,43 +16,30 @@ $(document).ready(function () {
 		nextArrow: '<div class="next-arrow">123</div>'
 	});
 
-// on hover
-// 	let planningPopup = function () {
-// 		$('.flat').hover(function () {
-// 				$('.floors-popup').slideToggle();
-// 				//$(this).find('.flat').css('display', 'none');
-// 				//$('.floors-content').css('text-align', 'right');
-// 				//let a = $('.floors-popup img').attr('src');
-// 				$('.floors').css('margin-left', '300px');
-// 				$('.floors-popup').html($(this).attr('data-image'));
-//
-// 		},
-// 		function () {
-// 			$('.floors-popup').slideToggle();
-// 			$('.floors').css('margin-left', 'auto');
-// 		});
-// 	};
+	//Вивід попапу квартир
 
-	/*onClick*/
-
-	// let planningPopup = function () {
-	// 	$('.flat').click(function () {
-	// 			$('.floors-popup').slideToggle();
-	// 			$('.floors-popup__img').html($(this).attr('data-image'));
-	// 		});
-	// 	$('.floors-popup__close').click(function () {
-	// 		$('.floors-popup').css('display', 'none');
-	// 	});
-	// };
 	let planningPopup = function () {
+
+		const $popupContentBlock = $('.floors-popup__content');
+		const $popup = $('.floors-popup');
+
 		$('.flat').click(function () {
-			$('.floors-popup').css('left', 0);
-			$('.floors-popup__img').html($(this).attr('data-image'));
+
+			let flatID = $(this).data('flat-id');
+			let $flatPopup = $('.popup-flat#' + flatID).clone();
+
+			if ( $flatPopup.length ) {
+				$popupContentBlock.html($flatPopup);
+				$popup.css({'left' : '50%', 'marginLeft' : '-400px'});
+			}
 		});
+
 		$('.floors-popup__close').click(function () {
-			$('.floors-popup').css('left', '-600px');
+			$popup.css('left', '-800px');
+			$popupContentBlock.delay(2000).html('');
 		});
 	};
+
 
 
 	let sandwich = function() {
@@ -61,18 +50,14 @@ $(document).ready(function () {
 
 		});
 	}
-
 	planningPopup();
 	sandwich();
-
-
 
 	$('body').on('click', '[href*="#anchor"]', function(e){
 		let fixed_offset = 100;
 		$('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
 		e.preventDefault();
 	});
-
 
 	/*Popup*/
 
@@ -83,4 +68,4 @@ $(document).ready(function () {
 	});
 
 });
-
+});

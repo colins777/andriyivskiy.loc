@@ -34,7 +34,7 @@ while ($advantagesItems->have_posts()) :
 <section class="planning">
     <div class="container">
         <div class="section-title">
-            <h2 class="h2" id="anchor3">Планування</h2>
+            <h2 class="h2">Планування</h2>
             <div class="arrow"></div>
         </div>
     </div>
@@ -94,45 +94,130 @@ while ($advantagesItems->have_posts()) :
 			<h2 class="h2" id="anchor3">Типовий поверх</h2>
 			<div class="arrow"></div>
 		</div>
+
 		<div class="floors-popup">
 			<div class="floors-popup__close">
 				<img src="<?php echo get_template_directory_uri() . '/img/icons/times-solid.svg'?>" alt="">
 			</div>
-			<div class="floors-popup__img"></div>
+			<div class="floors-popup__content"></div>
 		</div>
+
 		<div class="floors-content">
 			<svg viewBox = "0 0 800 1389.3333">
 
-				<path class="flat" d="M 95.672649,47.836325 V 366.05187 l 384.770441,-4.15968 -2.07984,-158.06785 235.02194,-4.15968 V 33.277443 H 89.433128 Z" fill="#000"
-				data-image="<div><img src='<?php echo get_template_directory_uri() . '/img/planning/10.jpg'?>'</div>"
+					<path class="flat" d="M 95.672649,47.836325 V 366.05187 l 384.770441,-4.15968 -2.07984,-158.06785 235.02194,-4.15968 V 33.277443 H 89.433128 Z" fill="#000"
+					data-flat-id="flat-10"
+					>
+					</path>
+
+				<path class="flat" d="m 93.592809,366.05187 2.07984,164.30738 H 14.558881 l 2.079841,160.1477 349.413148,2.07984 v -118.5509 h 22.87825 l -2.07984,-210.06386 z"
+			  	data-flat-id="flat-2"
+				>
+				</path>
+
+				<path class="flat" d="m 14.558881,702.98599 v 322.37521 l 374.371239,-2.0798 V 694.66663 L 12.479041,688.42711 Z"
+			  	data-flat-id="flat-3"
 				>
 				</path>
 
 
-				<path class="flat" d="m 93.592809,366.05187 2.07984,164.30738 H 14.558881 l 2.079841,160.1477 349.413148,2.07984 v -118.5509 h 22.87825 l -2.07984,-210.06386 z"
-					  data-image="<div><img src='<?php echo get_template_directory_uri() . '/img/planning/9.jpg'?>'</div>">
-
-				</path>
-				<path class="flat" d="m 14.558881,702.98599 v 322.37521 l 374.371239,-2.0798 V 694.66663 L 12.479041,688.42711 Z" data-image="<div><img src='<?php echo get_template_directory_uri() . '/img/planning/8.jpg'?>'</div>">
-
+				<path class="flat" d="m 18.718562,1023.2814 2.07984,160.1477 72.794407,-2.0799 V 1353.976 H 715.46503 V 1187.5888 H 476.28341 l -2.07984,-143.509 -83.19361,2.0798 -2.07984,-24.9581 z"
+			  	data-flat-id="flat-4"
+				>
 				</path>
 
-				<path class="flat" d="m 18.718562,1023.2814 2.07984,160.1477 72.794407,-2.0799 V 1353.976 H 715.46503 V 1187.5888 H 476.28341 l -2.07984,-143.509 -83.19361,2.0798 -2.07984,-24.9581 z" data-image="<div><img src='<?php echo get_template_directory_uri() . '/img/planning/7.jpg'?>'</div>">
+				<path class="flat" d="m 476.28341,836.09576 2.07984,349.41314 h 309.89618 l -6.23952,-353.57282 z"
+				  data-flat-id="flat-5"
+				>
+				</path>
 
 				</path>
-				<path class="flat" d="m 476.28341,836.09576 2.07984,349.41314 h 309.89618 l -6.23952,-353.57282 z">
-
-				</path>
-				</path>
-				<path class="flat" d="m 478.36325,197.58482 2.07984,393.0898 137.26945,2.07984 v 99.83233 h 172.62674 l 6.23952,-334.85428 h -14.55889 l 4.15968,-160.14769 z" data-image="<div><img src='<?php echo get_template_directory_uri() . '/img/planning/11.jpg'?>'</div>">
-
-
-
+				<path class="flat" d="m 478.36325,197.58482 2.07984,393.0898 137.26945,2.07984 v 99.83233 h 172.62674 l 6.23952,-334.85428 h -14.55889 l 4.15968,-160.14769 z"
+				  data-flat-id="flat-6"
+				>
 			</svg>
-			<img src="<?php echo get_template_directory_uri() . '/img/floors/600_1042.jpg'?>" alt="">
 
+			<img src="<?php echo get_template_directory_uri() . '/img/floors/600_1042.jpg'?>" alt="">
 		</div>
 	</div>
+
+<!--Popup for flats-->
+	<div class="hidden">
+		<div class="popup-floors-content">
+
+            <?php $planningItemsPopup = new WP_Query(array('category_name' => 'planning'));
+
+            while ($planningItemsPopup->have_posts()) :
+                $planningItemsPopup->the_post();?>
+
+				<div class="popup-flat" id="<?php the_field('flat_id');?>">
+							<div class="popup-flat-descr">
+								<div class="popup-flat__features">
+									<h3 class="popup-flat__title"><?php the_title();?></h3>
+									<div class="popup-flat__features--item">
+										<span class="popup-flat__features--item-option">Поверх:</span>
+										<span class="popup-flat__features--item-value"><?php the_field('flor');?></span>
+									</div>
+
+									<div class="popup-flat__features--item">
+										<span class="popup-flat__features--item-option">Кількість кімнат:</span>
+										<span class="popup-flat__features--item-value"><?php the_field('qty_room');?></span>
+									</div>
+
+									<div class="popup-flat__features--item">
+										<span class="popup-flat__features--item-option">Загальна площа:</span>
+										<span class="popup-flat__features--item-value"><?php the_field('general_square');?></span>
+									</div>
+								</div>
+
+							</div> <!--slide-descr-->
+
+							<div class="popup-flat-img">
+                                <?php echo get_the_post_thumbnail();?>
+							</div>
+
+				</div>  <!--popup-floors-item-->
+
+            <?php endwhile; wp_reset_postdata();?>
+
+
+
+<!--			<div class="popup-floors-item" id="flat-1">
+				<h2>Квартира 1</h2>
+				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/6.jpg' */?>' />
+			</div>
+
+			<div class="popup-floors-item" id="flat-2">
+				<h2>Квартира 2</h2>
+				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/7.jpg' */?>' />
+			</div>
+
+			<div class="popup-floors-item" id="flat-3">
+				<h2>Квартира 3</h2>
+				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/8.jpg' */?>' />
+			</div>
+
+
+			<div class="popup-floors-item" id="flat-4">
+				<h2>Квартира 4</h2>
+				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/9.jpg' */?>' />
+			</div>
+
+
+			<div class="popup-floors-item" id="flat-5">
+				<h2>Квартира 5</h2>
+				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/10.jpg' */?>' />
+
+			</div>
+
+			<div class="popup-floors-item" id="flat-6">
+				<h2>Квартира 6</h2>
+				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/11.jpg' */?>' />
+			</div>
+
+		</div>--> <!--popup-floors-content-->
+		</div> <!--popup-floors-content-->
+	</div> <!--hidden-->
 </section>
 
 
@@ -268,9 +353,9 @@ while ($advantagesItems->have_posts()) :
 
             </div>
 
-            <div class="contacts-map">
-                <iframe src="https://www.google.com/maps/d/embed?mid=133B6EWTVH3B8QVFu5-MwYKjZr8YOgEKh" width="100%" height="480"></iframe>
-            </div>
+<!--            <div class="contacts-map">-->
+<!--                <iframe src="https://www.google.com/maps/d/embed?mid=133B6EWTVH3B8QVFu5-MwYKjZr8YOgEKh" width="100%" height="480"></iframe>-->
+<!--            </div>-->
 
 
         </div>
