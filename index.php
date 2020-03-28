@@ -111,29 +111,29 @@ while ($advantagesItems->have_posts()) :
 					</path>
 
 				<path class="flat" d="m 93.592809,366.05187 2.07984,164.30738 H 14.558881 l 2.079841,160.1477 349.413148,2.07984 v -118.5509 h 22.87825 l -2.07984,-210.06386 z"
-			  	data-flat-id="flat-2"
+			  	data-flat-id="flat-9"
 				>
 				</path>
 
 				<path class="flat" d="m 14.558881,702.98599 v 322.37521 l 374.371239,-2.0798 V 694.66663 L 12.479041,688.42711 Z"
-			  	data-flat-id="flat-3"
+			  	data-flat-id="flat-8"
 				>
 				</path>
 
 
 				<path class="flat" d="m 18.718562,1023.2814 2.07984,160.1477 72.794407,-2.0799 V 1353.976 H 715.46503 V 1187.5888 H 476.28341 l -2.07984,-143.509 -83.19361,2.0798 -2.07984,-24.9581 z"
-			  	data-flat-id="flat-4"
+			  	data-flat-id="flat-7"
 				>
 				</path>
 
 				<path class="flat" d="m 476.28341,836.09576 2.07984,349.41314 h 309.89618 l -6.23952,-353.57282 z"
-				  data-flat-id="flat-5"
+				  data-flat-id="flat-6"
 				>
 				</path>
 
 				</path>
 				<path class="flat" d="m 478.36325,197.58482 2.07984,393.0898 137.26945,2.07984 v 99.83233 h 172.62674 l 6.23952,-334.85428 h -14.55889 l 4.15968,-160.14769 z"
-				  data-flat-id="flat-6"
+				  data-flat-id="flat-11"
 				>
 			</svg>
 

@@ -30,7 +30,13 @@ $(document).ready(function ($) {
 
 			if ( $flatPopup.length ) {
 				$popupContentBlock.html($flatPopup);
-				$popup.css({'left' : '50%', 'marginLeft' : '-400px'});
+
+				let windowWidth = $(window).width();
+				if (windowWidth < 481) {
+					$popup.css({'left' : '0', 'marginLeft' : '0'});
+					console.log(123);
+				}
+				else $popup.css({'left' : '50%', 'marginLeft' : '-400px'});
 			}
 		});
 
@@ -39,8 +45,6 @@ $(document).ready(function ($) {
 			$popupContentBlock.delay(2000).html('');
 		});
 	};
-
-
 
 	let sandwich = function() {
 		$(document).on('click', '.sandwich', function () {
