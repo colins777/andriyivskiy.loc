@@ -179,43 +179,6 @@ while ($advantagesItems->have_posts()) :
 				</div>  <!--popup-floors-item-->
 
             <?php endwhile; wp_reset_postdata();?>
-
-
-
-<!--			<div class="popup-floors-item" id="flat-1">
-				<h2>Квартира 1</h2>
-				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/6.jpg' */?>' />
-			</div>
-
-			<div class="popup-floors-item" id="flat-2">
-				<h2>Квартира 2</h2>
-				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/7.jpg' */?>' />
-			</div>
-
-			<div class="popup-floors-item" id="flat-3">
-				<h2>Квартира 3</h2>
-				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/8.jpg' */?>' />
-			</div>
-
-
-			<div class="popup-floors-item" id="flat-4">
-				<h2>Квартира 4</h2>
-				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/9.jpg' */?>' />
-			</div>
-
-
-			<div class="popup-floors-item" id="flat-5">
-				<h2>Квартира 5</h2>
-				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/10.jpg' */?>' />
-
-			</div>
-
-			<div class="popup-floors-item" id="flat-6">
-				<h2>Квартира 6</h2>
-				<img src='<?php /*echo get_template_directory_uri() . '/img/planning/11.jpg' */?>' />
-			</div>
-
-		</div>--> <!--popup-floors-content-->
 		</div> <!--popup-floors-content-->
 	</div> <!--hidden-->
 </section>
@@ -292,47 +255,54 @@ while ($advantagesItems->have_posts()) :
             <div class="arrow"></div>
         </div>
 
-        <div class="news-items">
+<!--        <div class="news-items">-->
+<!---->
+<!---->
+<!--            --><?php
+//
+//            $filterNewsPosts = [
+//                'category_name' => 'news',
+//                'posts_per_page' => 3
+//            ];
+//
+//            $newsPosts = new WP_Query($filterNewsPosts);
+//
+//
+//            while ($newsPosts->have_posts()) :
+//                $newsPosts->the_post();?>
+<!---->
+<!--                <div class="news-item">-->
+<!--                    <div class="news-item__img">-->
+<!--                        <img src="--><?php //echo get_the_post_thumbnail_url();?><!--" alt="">-->
+<!--                    </div>-->
+<!---->
+<!--                    <div class="news-item-descr">-->
+<!--                        <h2 class="news-item__title">-->
+<!--                            --><?php //the_title();?>
+<!--                        </h2>-->
+<!---->
+<!--                        <div class="news-item__text">-->
+<!--					--><?php //the_excerpt();?>
+<!--				</div>-->
+<!--                    </div>
+<!---->
+<!--                    <a href="--><?php //the_permalink();?><!--" class="button">Читати далі...</a>-->
+<!--                </div>
+<!---->
+<!---->
+<!--            --><?php //endwhile;
+//            wp_reset_postdata();
+//            ?>
+<!--        </div> -->
 
+        <?php echo wp_video_shortcode([
+            'src' => 'http://andriyivskiy.loc/wp-content/uploads/2020/05/news_video.mp4',
+            'poster' => 'http://andriyivskiy.loc/wp-content/uploads/2020/05/video_screen.jpg',
+            'height' => 500,
+            'width' => 1020,
+        ]); ?>
 
-            <?php
-
-            $filterNewsPosts = [
-                'category_name' => 'news',
-                'posts_per_page' => 3
-            ];
-
-            $newsPosts = new WP_Query($filterNewsPosts);
-
-
-            while ($newsPosts->have_posts()) :
-                $newsPosts->the_post();?>
-
-                <div class="news-item">
-                    <div class="news-item__img">
-                        <img src="<?php echo get_the_post_thumbnail_url();?>" alt="">
-                    </div>
-
-                    <div class="news-item-descr">
-                        <h2 class="news-item__title">
-                            <?php the_title();?>
-                        </h2>
-
-                        <div class="news-item__text">
-					<?php the_excerpt();?>
-				</div>
-                    </div> <!--news-item-descr-->
-
-                    <a href="<?php the_permalink();?>" class="button">Читати далі...</a>
-                </div> <!--news-item-->
-
-
-            <?php endwhile;
-            wp_reset_postdata();
-            ?>
-        </div> <!--news-items-->
-
-        <a href="<?php home_url();?>/all-news" class="button">Всі новини</a>
+<!--        <a href="--><?php //home_url();?><!--/all-news" class="button">Всі новини</a>-->
     </div>
 </section>
 
@@ -346,21 +316,18 @@ while ($advantagesItems->have_posts()) :
 
         <div class="contacts-wrap">
             <div class="contacts-address">
-                <span class="contacts-address__street">м. Київ, вул. Головна 23</span>
-                <a href="tel:+38-099-909-88-68" class="contacts-address__phone">+38-099-909-88-67</a>
+                <span class="contacts-address__street"><?php the_field('address', 133); ?></span>
+                <a href="tel:<?php the_field('phone', 133); ?>" class="contacts-address__phone"><?php the_field('phone', 133); ?></a>
+                <a href="tel:<?php the_field('phone_2', 133); ?>" class="contacts-address__phone"><?php the_field('phone_2', 133); ?></a>
                 <a href="#callback" class="button">Залишити заявку</a>
-
-
             </div>
 
-<!--            <div class="contacts-map">-->
-<!--                <iframe src="https://www.google.com/maps/d/embed?mid=133B6EWTVH3B8QVFu5-MwYKjZr8YOgEKh" width="100%" height="480"></iframe>-->
-<!--            </div>-->
+            <div class="contacts-map">
+                <iframe src="https://www.google.com/maps/d/embed?mid=133B6EWTVH3B8QVFu5-MwYKjZr8YOgEKh" width="100%" height="480"></iframe>
+            </div>
 
 
         </div>
-
-
     </div>
 </section>
 

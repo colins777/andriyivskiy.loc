@@ -108,7 +108,6 @@ h1
 		display: flex
 		align-items: center
 		justify-content: space-between
-		//border-bottom: 1px solid $accent
 		.logo
 			img
 				width: 200px
@@ -126,6 +125,7 @@ h1
 					&:hover
 						color: #fff
 						text-decoration: none
+
 	&-text
 		max-width: 600px
 		position: absolute
@@ -133,7 +133,6 @@ h1
 		left: 50px
 		background-color: red
 		padding: 20px
-		//background-color: rgba(56, 36, 8, 0.4)
 		background-color: rgba(173,0,48,0.8)
 		transform: translateY(-50%)
 		p
@@ -155,7 +154,7 @@ h1
 					position: relative
 					text-transform: uppercase
 					font-size: 14px
-					color: #fff
+					color: #ad0030
 					padding-bottom: 5px
 					border-bottom: 2px solid transparent
 					text-decoration: none
@@ -329,11 +328,6 @@ h1
 				padding: 10px 5px 10px 0
 				color: #9e9e9e
 				width: 100%
-
-
-
-
-
 .my-dots
 	position: absolute
 	bottom: -45px
@@ -393,9 +387,6 @@ h1
 		h2
 			text-transform: uppercase
 
-
-
-
 .news
 	background-color: #faf5f5
 	&-items
@@ -438,6 +429,8 @@ h1
 				line-height: 16px
 				color: #000
 				font-family: $bold-font
+	.mejs-container
+		margin-top: 50px
 
 .contacts
 	&-wrap
@@ -506,14 +499,14 @@ h1
 				text-transform: uppercase
 				font-family: $bold-font
 				font-size: 14px
-//Universal blocks
 
+//Universal blocks
 .sandwich
 	cursor: pointer
 	height: 14px
 	position: relative
 	width: 23px
-	z-index 9999
+	z-index: 9999
 	&--active
 		.sandwich__line
 		&--top
@@ -559,7 +552,6 @@ h1
 	justify-content: center
 	flex-direction: column
 	padding: 20px 20px 6px 20px
-	//box-sizing: content-box
 	background-color: #000
 	max-width: 320px
 	margin: 0 auto
@@ -653,5 +645,11 @@ body input, body textarea
 	background-color: transparent
 	background-repeat: no-repeat
 
+.header-top__line-right
+    .contacts-item
+        &:not(:last-child)
+            margin-right: 10px
+.header
+    background-position: 1%
 @import "media" // Always at the end
 

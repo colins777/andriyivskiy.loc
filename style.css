@@ -3033,7 +3033,7 @@ h1 {
   position: relative;
   text-transform: uppercase;
   font-size: 14px;
-  color: #fff;
+  color: #ad0030;
   padding-bottom: 5px;
   border-bottom: 2px solid transparent;
   text-decoration: none;
@@ -3506,6 +3506,10 @@ h1 {
   font-family: GothicBold, sans-serif;
 }
 
+.news .mejs-container {
+  margin-top: 50px;
+}
+
 .contacts-wrap {
   position: relative;
   margin-top: 50px;
@@ -3636,6 +3640,7 @@ h1 {
   height: 14px;
   position: relative;
   width: 23px;
+  z-index: 9999;
 }
 
 .sandwich--active--top {
@@ -3850,6 +3855,14 @@ body input, body textarea {
   color: transparent;
   background-color: transparent;
   background-repeat: no-repeat;
+}
+
+.header-top__line-right .contacts-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.header {
+  background-position: 1%;
 }
 
 /*==========  Desktop First  ==========*/
@@ -4106,5 +4119,19 @@ body input, body textarea {
   }
   .page-planning__gallery {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header-top__line-right .contacts {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }

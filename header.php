@@ -25,7 +25,7 @@
 
 <?php if (is_home()) :?>
 
-<header class="header" style="background-image: url('<?php echo get_template_directory_uri() . '/img/header_bg.jpg';?>');">
+<header class="header" style="background-image: url('<?php echo get_template_directory_uri() . '/img/header_bg2.jpg';?>');">
 
 		<div class="header-top__line">
 			<div class="sandwich">
@@ -45,6 +45,7 @@
 
 				<div class="contacts">
 					<a class="contacts-item" href="tel:<?php the_field('phone', 133); ?>"><?php the_field('phone', 133); ?></a>
+                    <a class="contacts-item" href="tel:<?php the_field('phone_2', 133); ?>"><?php the_field('phone_2', 133); ?></a>
 				</div>
 				<nav class="header-menu">
 					<ul class="main-nav">
