@@ -25,7 +25,7 @@
 
 <?php if (is_home()) :?>
 
-<header class="header" style="background-image: url('<?php echo get_template_directory_uri() . '/img/header_bg2.jpg';?>');">
+<header class="header" style="background-image: url('<?php echo get_template_directory_uri() . '/img/header_bg.jpg';?>');">
 
 		<div class="header-top__line">
 			<div class="sandwich">

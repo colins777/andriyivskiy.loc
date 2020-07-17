@@ -2920,6 +2920,7 @@ h1 {
   height: 100vh;
   background-size: cover;
   width: 100%;
+  background-position: 0 10%;
 }
 
 .header-nothome {
