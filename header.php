@@ -28,11 +28,15 @@
 <header class="header" style="background-image: url('<?php echo get_template_directory_uri() . '/img/header_bg.jpg';?>');">
 
 		<div class="header-top__line">
-			<div class="sandwich">
-				<div class="sandwich__line sandwich__line--top"></div>
-				<div class="sandwich__line sandwich__line--middle"></div>
-				<div class="sandwich__line sandwich__line--bottom"></div>
-			</div>
+
+            <div class="sandwich-wrap">
+                <div class="sandwich">
+                    <div class="sandwich__line sandwich__line--top"></div>
+                    <div class="sandwich__line sandwich__line--middle"></div>
+                    <div class="sandwich__line sandwich__line--bottom"></div>
+                </div>
+            </div>
+
 			<div class="container container-flex">
 			<div class="header-top__line-left">
 				<div class="logo">

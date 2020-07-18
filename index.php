@@ -4,15 +4,18 @@ Template Name: HomePage
 */
 ?>
 
-<?php get_header(); ?>
+<?php get_header();
+
+$imgScr = get_template_directory_uri() . '/img/';
+
+?>
 
     <section class="gallery">
+        <div class="section-title">
+            <h2 class="h2" id="anchor4">Галерея</h2>
+            <div class="arrow"></div>
+        </div>
         <div class="container">
-            <div class="section-title">
-                <h2 class="h2" id="anchor4">Галерея</h2>
-                <div class="arrow"></div>
-            </div>
-
             <div class="gallery-content">
                 <?php $galleryItem = new WP_Query(array('category_name' => 'gallery-main' ));
 
@@ -26,37 +29,118 @@ Template Name: HomePage
     </section>
 
 <section class="advantages-s" >
+    <div class="section-title">
+        <h2 class="h2" id="anchor2">Переваги</h2>
+        <div class="arrow"></div>
+    </div>
     <div class="container">
-        <div class="section-title">
-            <h2 class="h2" id="anchor2">Переваги</h2>
-            <div class="arrow"></div>
-        </div>
-
         <div class="advantages-wrap">
+            <div class="advantages-column">
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/1.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text advantages-item__text--height">
+                        <p>перший в Прилуках будинок за сучасними технологіями монолітно-каркасного будівництва</p>
+                    </div>
+                </div> <!--advantages-item-->
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/2.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text">
+                        <p>дитячий-спортивний майданчик</p>
+                    </div>
+                </div> <!--advantages-item-->
 
-			<?php $advantagesItems = new WP_Query(array('category_name' => 'advantages'));
+
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/3.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text">
+                        <p>панорамнi вiкна</p>
+                    </div>
+                </div> <!--advantages-item-->
+            </div> <!--advantages-column-->
+
+            <div class="advantages-column">
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/4.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text advantages-item__text--height">
+                        <p>Енергозберiгаючi технологiї:<br>-індивiдуальне опалення, <br>-встановлення радіатора з регуляторами, <br>-утеплення фасаду</p>
+                    </div>
+                </div> <!--advantages-item-->
 
 
-while ($advantagesItems->have_posts()) :
-    $advantagesItems->the_post();?>
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/3.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text">
+                        <p>наземний і підземний паркінг</p>
+                    </div>
+                </div> <!--advantages-item-->
 
-            <div class="advantages-item">
-                <span class="advantages-item__top"><?php the_title();?></span>
-                <span class="advantages-item__bottom"><?php the_content();?></span>
-            </div>
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/6.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text">
+                        <p>вільне планування квартир</p>
+                    </div>
+                </div> <!--advantages-item-->
+            </div> <!--advantages-column-->
 
-<?php endwhile; wp_reset_postdata();?>
+
+
+            <div class="advantages-column">
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/2.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text advantages-item__text--height">
+                        <p>Затишне мiсце в центральній частині міста:<br>вiдстань до школи 200м, <br>-супермаркет, <br>-зупинка, <br>-банк, <br>-аптека</p>
+                    </div>
+                </div> <!--advantages-item-->
+
+
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/7.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text">
+                        <p>закрита територія</p>
+                    </div>
+                </div> <!--advantages-item-->
+
+                <div class="advantages-item">
+                    <div class="advantages-item__img">
+                        <img src="<?php echo $imgScr . 'advantages/8.jpg' ?>" alt="">
+                    </div>
+                    <div class="advantages-item__text">
+                        <p>висота стель 2.85 м</p>
+                    </div>
+                </div> <!--advantages-item-->
+            </div> <!--advantages-column-->
+
+            </div> <!--advantages-column-->
+
+
+
         </div> <!--advantages-wrap-->
     </div>
 </section>
 
     <section class="floors">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="h2" id="anchor3">Типовий поверх</h2>
-                <div class="arrow"></div>
-            </div>
+        <div class="section-title">
+            <h2 class="h2" id="anchor3">Типовий поверх</h2>
+            <div class="arrow"></div>
+        </div>
 
+        <div class="container">
             <div class="floors-popup">
                 <div class="floors-popup__close">
                     <img src="<?php echo get_template_directory_uri() . '/img/icons/times-solid.svg'?>" alt="">
@@ -146,15 +230,12 @@ while ($advantagesItems->have_posts()) :
     </section>
 
 <section class="planning">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="h2">Планування</h2>
-            <div class="arrow"></div>
-        </div>
+    <div class="section-title">
+        <h2 class="h2">Планування</h2>
+        <div class="arrow"></div>
     </div>
 
     <div class="s-slider">
-
         <?php $planningItems = new WP_Query(array('category_name' => 'planning'));
 
 
@@ -201,14 +282,33 @@ while ($advantagesItems->have_posts()) :
     </div> <!--s-slider-->
 </section>
 
-
-<section class="permissions" >
-    <div class="container">
+    <section class="about" id="anchor6">
         <div class="section-title">
-            <h2 class="h2" id="anchor5">Дозволи</h2>
+            <h2 class="h2">Забудовник</h2>
             <div class="arrow"></div>
         </div>
 
+        <div class="container">
+            <div class="about-content">
+                <?php
+                $companyPosts = get_posts('numberposts=1&category=8');
+                foreach ($companyPosts as $post) :
+                    setup_postdata($post);
+                    ?>
+                    <h2><?php the_title()?></h2>
+                    <?php the_content(); ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+<section class="permissions" >
+    <div class="section-title">
+        <h2 class="h2" id="anchor5">Дозволи</h2>
+        <div class="arrow"></div>
+    </div>
+
+    <div class="container">
         <div class="permissions-content">
             <?php $galleryItem = new WP_Query(array('category_name' => 'permissions' ));
 
@@ -221,56 +321,30 @@ while ($advantagesItems->have_posts()) :
     </div>
 </section>
 
-
-
-<section class="about" id="anchor6">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="h2">Забудовник</h2>
-            <div class="arrow"></div>
-        </div>
-
-        <div class="about-content">
-
-            <?php
-            $companyPosts = get_posts('numberposts=1&category=8');
-            foreach ($companyPosts as $post) :
-                setup_postdata($post);
-                ?>
-				<h2><?php the_title()?></h2>
-			<?php the_content(); ?>
-            <?php endforeach; ?>
-
-
-        </div>
-    </div>
-</section>
-
 <section class="news" >
-    <div class="container">
-        <div class="section-title">
-            <h2 class="h2" id="anchor7">Новини</h2>
-            <div class="arrow"></div>
-        </div>
+    <div class="section-title">
+        <h2 class="h2" id="anchor7">Новини</h2>
+        <div class="arrow"></div>
+    </div>
 
+    <div class="container">
         <?php echo wp_video_shortcode([
             'src' => 'http://andriyivskiy.loc/wp-content/uploads/2020/07/video2.mp4',
             'poster' => 'http://andriyivskiy.loc/wp-content/uploads/2020/07/video_2_screen.jpg',
             'height' => 500,
             'width' => 1020,
         ]); ?>
-
     </div>
 </section>
 
 
 <section class="contacts">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="h2" id="anchor8">Контакти</h2>
-            <div class="arrow"></div>
-        </div>
+    <div class="section-title">
+        <h2 class="h2" id="anchor8">Контакти</h2>
+        <div class="arrow"></div>
+    </div>
 
+    <div class="container">
         <div class="contacts-wrap">
             <div class="contacts-address">
                 <span class="contacts-address__street"><?php the_field('address', 133); ?></span>
@@ -282,11 +356,7 @@ while ($advantagesItems->have_posts()) :
             <div class="contacts-map">
                 <iframe src="https://www.google.com/maps/d/embed?mid=133B6EWTVH3B8QVFu5-MwYKjZr8YOgEKh" width="100%" height="480"></iframe>
             </div>
-
-
         </div>
     </div>
 </section>
-
-
 <?php get_footer();?>

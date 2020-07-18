@@ -47,7 +47,7 @@ $(document).ready(function ($) {
 	};
 
 	let sandwich = function() {
-		$(document).on('click', '.sandwich', function () {
+		$(document).on('click', '.sandwich-wrap', function () {
 			$(this).toggleClass('sandwich--active');
 			$('.header-menu').toggle("slow");
 			$('.header-menu').css('left', 0);
@@ -70,6 +70,8 @@ $(document).ready(function ($) {
 		removalDelay: 300,
 		type: 'inline'
 	});
+
+
 
 });
 });

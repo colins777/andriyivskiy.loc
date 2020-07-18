@@ -18,8 +18,9 @@
 			width: 100%
 			flex-direction: column
 			justify-content: center
-			background-color: #000
+			background-color: #d4d4d4
 			padding-left: 0
+			margin: 0
 			& > *:not(:last-child)
 				margin-right: 0
 
@@ -54,19 +55,28 @@
 			&:hover
 				width: 32px
 				height: 32px
+		.slide-img
+			margin-top: 20px
 	.sandwich
 		display: block
 		position: absolute
-		top: 20px
-		left: 20px
+		top: 9px
+		left: 4px
 		z-index: 2
+		&-wrap
+			position: absolute
+			top: 0
+			left: 0
+			width: 30px
+			height: 30px
+			background-color: #ad0030
 
 
 @media screen and (max-width: 480px)
-	section
 	.header
 		min-height: 600px
 		height: auto
+		background-position: 57%
 		&-nothome
 			.header-top__line-right
 				.contacts
@@ -75,12 +85,22 @@
 					justify-content: center
 					.button-left
 						margin: 10px auto
+		&-top__line
+			background-color: rgba(138, 116, 116, 0.33)
+		.contacts-item
+			color: #fff
 	.container
 		padding: 0 30px
 	.header-text
-		width: 100%
+		width: 80%
 		padding: 10px
 		top: 40%
+		background-color: rgba(239, 239, 239, 0.8)
+		p
+			font-size: 12px
+			color: #000
+	.descr-mobile
+		display: none
 	.section-title
 		font-size: 16px
 		padding: 10px
@@ -99,6 +119,8 @@
 			line-height: 14px
 	.slide-content
 		flex-direction: column
+	.floors
+		display: none
 	.floors-popup
 		max-width: 480px
 		width: 100%
@@ -138,7 +160,7 @@
 	.contacts-address
 		position: relative
 		max-width: 100%
-		margin-top: 80px
+		margin-top: 150px
 		justify-content: center
 		align-items: center
 	.contacts-wrap

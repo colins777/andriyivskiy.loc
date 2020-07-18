@@ -8,8 +8,12 @@
 ::selection
 	background-color: $accent
 	color: #fff
-
+html
+	padding: 0
+	margin: 0
 body
+	padding: 0
+	margin: 0
 	font-size: 16px
 	min-width: 320px
 	position: relative
@@ -24,7 +28,8 @@ body
 			border-color: red
 		&:required:valid
 			border-color: green
-
+a
+	text-decoration: none
 .section-title
 	padding: 20px
 	background-color: $accent
@@ -32,37 +37,13 @@ body
 	font-size: 30px
 	text-transform: uppercase
 	text-align: left
-	width: 50%
+	width: 100%
 	position: relative
 	display: flex
-	justify-content: space-between
+	justify-content: center
 	align-items: center
 	.h2
 		margin: 0
-.arrow
-	background: #fff
-	height: 3px
-	width: 80px
-	margin: 0 auto
-	position: relative
-	top: 0
-	left: 0
-	&:before,
-	&:after
-		content: ""
-		background: #fff
-		position: absolute
-		height: 3px
-		width: 15px
-	&:before
-		right: -3px
-		bottom: -4px
-		transform: rotate(-45deg)
-	&:after
-		right: -3px
-		top: -4px
-		transform: rotate(45deg)
-
 .img-responsive
 	display: block
 	max-width: 100%
@@ -123,8 +104,9 @@ h1
 					color: $accent
 					font-family: $bold-font
 					transition: all .3s ease-out
+					text-decoration: none
 					&:hover
-						color: #fff
+						color: $accent
 						text-decoration: none
 
 	&-text
@@ -176,34 +158,48 @@ h1
 
 
 .advantages
-	background-color: #faf5f5
+	&-s
+		background-color: rgba(255, 235, 59, 0.17)
+		font-family: 'RalewaySemiBold', sans-serif
+		color: #816a6a
+		font-size: 16px
+		padding-bottom: 0
+	
 	&-wrap
 		display: flex
-		flex-wrap: wrap
+		justify-content: space-between
+		align-items: flex-start
 		margin-top: 50px
-		& > *
-			&:not(:nth-child(2n))
-				margin-right: 10%
+		//& > *
+		//	&:not(:last-child)
+		//		margin-right: 1%
+	&-column
+		width: 32%
+		display: flex
+		flex-direction: column
+		justify-content: flex-start
 	&-item
-		width: 45%
-		text-align: center
-		margin-bottom: 50px
-		&__top
-			display: block
-			text-transform: uppercase
-			font-family: $bold-font
-			font-size: 30px
+		margin-bottom: 40px
+		display: flex
+		flex-direction: column
+		align-items: flex-start
+		justify-content: center
+		box-sizing: border-box
+		&__img
+			width: 100%
+			height: 250px
+			img
+				width: 100%
+				height: 250px
+				object-fit: cover
+				display: block
+		&__text
 			text-align: left
-			color: $accent
-		&__bottom
-			display: block
-			text-align: left
-			font-size: 18px
-			font-family: $bold-font
+			padding: 20px
+			&--height
+				height: 200px
 .planning
-	//background-color: #faf5f5
 	.s-slider
-		//height: 600px
 		width: 100%
 		position: relative
 		margin-top: 50px
@@ -384,7 +380,7 @@ h1
 
 .about
 	&-content
-		margin-top: 50px
+		margin-top: 100px
 		h2
 			text-transform: uppercase
 
@@ -457,6 +453,7 @@ h1
 		&__phone
 			color: #fff
 			font-size: 20px
+			text-decoration: none
 			&:hover
 				color: $accent
 
@@ -505,7 +502,7 @@ h1
 .sandwich
 	cursor: pointer
 	height: 14px
-	position: relative
+	position: absolute
 	width: 23px
 	z-index: 9999
 	&--active
@@ -652,5 +649,194 @@ body input, body textarea
             margin-right: 10px
 .header
     background-position: 1%
+	
+.button
+	&-fixed
+		position: fixed
+		cursor: pointer
+		right: 60px
+		bottom: 60px
+		background: #38a3fd
+		border: 2px solid #38a3fd
+		border-radius: 50%
+		box-shadow: 0 8px 10px rgba(56,163,253,0.3)
+		height: 68px
+		line-height: 55px
+		text-align: center
+		width: 68px
+		z-index: 999
+		transition: .3s
+		animation: hoverWave linear 1s infinite
+		&:hover .text-call-span
+			opacity: 1
+		&:hover img
+			display: none
+		&:hover
+			width: 120px
+			height: 120px
+		&:hover .callback-phone
+			display: block
+		.text-call
+			margin-top: 40%
+			
+		.callback-phone
+			width: 100%
+			font-size: 13px
+			line-height: 12px
+			display: none
+			position: relative
+			text-decoration: none
+			color: #fff
+			margin-top: 10px
+			//&:not(:last-child)
+			//	margin-top: 44%
+		img
+			margin-top: 10px
+			width: 40px
+			height: auto
+			animation: 1200ms ease 0s normal none 1 running shake
+			animation-iteration-count: infinite
+
+
+
+@-webkit-keyframes hoverWave
+	0%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 0 rgba(56, 163, 253, 0.2), 0 0 0 0 rgba(56, 163, 253, 0.2)
+	
+	40%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 15px rgba(56, 163, 253, 0.2), 0 0 0 0 rgba(56, 163, 253, 0.2)
+	
+	80%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 30px rgba(56, 163, 253, 0), 0 0 0 26.7px rgba(56, 163, 253, 0.067)
+	
+	100%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 30px rgba(56, 163, 253, 0), 0 0 0 40px rgba(56, 163, 253, 0)
+
+@keyframes hoverWave
+	0%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 0 rgba(56, 163, 253, 0.2), 0 0 0 0 rgba(56, 163, 253, 0.2)
+	
+	40%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 15px rgba(56, 163, 253, 0.2), 0 0 0 0 rgba(56, 163, 253, 0.2)
+	
+	80%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 30px rgba(56, 163, 253, 0), 0 0 0 26.7px rgba(56, 163, 253, 0.067)
+	
+	100%
+		box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3), 0 0 0 30px rgba(56, 163, 253, 0), 0 0 0 40px rgba(56, 163, 253, 0)
+
+/* animations icon
+
+@keyframes shake
+	0%
+		transform: rotateZ(0deg)
+		-ms-transform: rotateZ(0deg)
+		-webkit-transform: rotateZ(0deg)
+	
+	10%
+		transform: rotateZ(-30deg)
+		-ms-transform: rotateZ(-30deg)
+		-webkit-transform: rotateZ(-30deg)
+	
+	20%
+		transform: rotateZ(15deg)
+		-ms-transform: rotateZ(15deg)
+		-webkit-transform: rotateZ(15deg)
+	
+	30%
+		transform: rotateZ(-10deg)
+		-ms-transform: rotateZ(-10deg)
+		-webkit-transform: rotateZ(-10deg)
+	
+	40%
+		transform: rotateZ(7.5deg)
+		-ms-transform: rotateZ(7.5deg)
+		-webkit-transform: rotateZ(7.5deg)
+	
+	50%
+		transform: rotateZ(-6deg)
+		-ms-transform: rotateZ(-6deg)
+		-webkit-transform: rotateZ(-6deg)
+	
+	60%
+		transform: rotateZ(5deg)
+		-ms-transform: rotateZ(5deg)
+		-webkit-transform: rotateZ(5deg)
+	
+	70%
+		transform: rotateZ(-4.28571deg)
+		-ms-transform: rotateZ(-4.28571deg)
+		-webkit-transform: rotateZ(-4.28571deg)
+	
+	80%
+		transform: rotateZ(3.75deg)
+		-ms-transform: rotateZ(3.75deg)
+		-webkit-transform: rotateZ(3.75deg)
+	
+	90%
+		transform: rotateZ(-3.33333deg)
+		-ms-transform: rotateZ(-3.33333deg)
+		-webkit-transform: rotateZ(-3.33333deg)
+	
+	100%
+		transform: rotateZ(0deg)
+		-ms-transform: rotateZ(0deg)
+		-webkit-transform: rotateZ(0deg)
+
+@-webkit-keyframes shake
+	0%
+		transform: rotateZ(0deg)
+		-ms-transform: rotateZ(0deg)
+		-webkit-transform: rotateZ(0deg)
+	
+	10%
+		transform: rotateZ(-30deg)
+		-ms-transform: rotateZ(-30deg)
+		-webkit-transform: rotateZ(-30deg)
+	
+	20%
+		transform: rotateZ(15deg)
+		-ms-transform: rotateZ(15deg)
+		-webkit-transform: rotateZ(15deg)
+	
+	30%
+		transform: rotateZ(-10deg)
+		-ms-transform: rotateZ(-10deg)
+		-webkit-transform: rotateZ(-10deg)
+	
+	40%
+		transform: rotateZ(7.5deg)
+		-ms-transform: rotateZ(7.5deg)
+		-webkit-transform: rotateZ(7.5deg)
+	
+	50%
+		transform: rotateZ(-6deg)
+		-ms-transform: rotateZ(-6deg)
+		-webkit-transform: rotateZ(-6deg)
+	
+	60%
+		transform: rotateZ(5deg)
+		-ms-transform: rotateZ(5deg)
+		-webkit-transform: rotateZ(5deg)
+	
+	70%
+		transform: rotateZ(-4.28571deg)
+		-ms-transform: rotateZ(-4.28571deg)
+		-webkit-transform: rotateZ(-4.28571deg)
+	
+	80%
+		transform: rotateZ(3.75deg)
+		-ms-transform: rotateZ(3.75deg)
+		-webkit-transform: rotateZ(3.75deg)
+	
+	90%
+		transform: rotateZ(-3.33333deg)
+		-ms-transform: rotateZ(-3.33333deg)
+		-webkit-transform: rotateZ(-3.33333deg)
+	
+	100%
+		transform: rotateZ(0deg)
+		-ms-transform: rotateZ(0deg)
+		-webkit-transform: rotateZ(0deg)
 @import "media" // Always at the end
 
